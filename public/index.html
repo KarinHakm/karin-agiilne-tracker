@@ -4,10 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karin Agile Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
+
+  <header>
     <h1>Karin Agile Tracker</h1>
+    <button id="addStoryBtn" class="btn btn-primary">+ Lisa story</button>
+  </header>
+
+  <main>
+    <div class="board">
+
+      <div class="column" id="col-todo">
+        <div class="column-header">
+          <h2>Todo / Backlog</h2>
+          <span class="points-sum" id="sum-todo">0 p</span>
+        </div>
+        <div class="cards" id="cards-todo"></div>
+      </div>
+
+      <div class="column" id="col-doing">
+        <div class="column-header">
+          <h2>Doing</h2>
+          <span class="points-sum" id="sum-doing">0 p</span>
+        </div>
+        <div class="cards" id="cards-doing"></div>
+      </div>
+
+      <div class="column" id="col-done">
+        <div class="column-header">
+          <h2>Done</h2>
+          <span class="points-sum" id="sum-done">0 p</span>
+        </div>
+        <div class="cards" id="cards-done"></div>
+      </div>
+
+    </div>
   </main>
+
+  <!-- Lisa / Muuda modal -->
+  <div id="storyModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Lisa uus story</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <form id="storyForm">
+        <div class="form-group">
+          <label for="storyTitle">Pealkiri *</label>
+          <input type="text" id="storyTitle" required placeholder="Story pealkiri">
+        </div>
+        <div class="form-group">
+          <label for="storyDescription">Kirjeldus</label>
+          <textarea id="storyDescription" rows="3" placeholder="Story kirjeldus"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="storyPoints">Punktid *</label>
+            <input type="number" id="storyPoints" min="0" step="1" required placeholder="0">
+          </div>
+          <div class="form-group">
+            <label for="storyStatus">Staatus</label>
+            <select id="storyStatus">
+              <option value="todo">Todo / Backlog</option>
+              <option value="doing">Doing</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Vastuvõtutingimused *</label>
+          <div id="criteriaList"></div>
+          <button type="button" id="addCriterion" class="btn btn-secondary btn-sm">+ Lisa tingimus</button>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelModal">Tühista</button>
+          <button type="submit" class="btn btn-primary">Salvesta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Detail modal -->
+  <div id="detailModal" class="modal hidden">
+    <div class="modal-content modal-large">
+      <div class="modal-header">
+        <h2 id="detailTitle"></h2>
+        <button class="close-btn" id="closeDetail">&times;</button>
+      </div>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast teated -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="app.js"></script>
+
 </body>
 </html>
