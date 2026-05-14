@@ -2,7 +2,7 @@
 
 Veebirakendus agiilse tarkvaraprojekti kasutajalugude (story'de) haldamiseks Kanban-laual.
 
-![Kanban laud](screenshot.png)
+![Kanban laud](./screenshot.png)
 > *Lisa siia ekraanipilt töötavast Kanban-lauast (failinimi: screenshot.png)*
 
 ---
