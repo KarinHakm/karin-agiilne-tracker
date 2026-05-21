@@ -24,8 +24,8 @@ Veebirakendus agiilse tarkvaraprojekti kasutajalugude (story'de) haldamiseks Kan
 
 ```bash
 # 1. Kloni repo
-git clone https://github.com/KarinHakm/karin-agile-tracker.git
-cd karin-agile-tracker
+git clone https://github.com/KarinHakm/karin-agiilne-tracker.git
+cd karin-agiilne-tracker
 
 # 2. Paigalda sõltuvused
 npm install
@@ -131,7 +131,7 @@ npm run dev
 ## Projekti struktuur
 
 ```
-karin-agile-tracker/
+karin-agiilne-tracker/
 ├── server.js           # Express server
 ├── database.js         # SQLite seadistus ja seed andmed
 ├── routes/
@@ -149,4 +149,4 @@ karin-agile-tracker/
 
 Projekt arendati branch-põhise töövoo alusel: iga funktsioon eraldi branchil, muutused lisati main-i Pull Request'i kaudu.
 
-Branchid, issue'd ja PR-ide ajalugu: https://github.com/vikk-tak25/karin-agile-tracker
+Branchid, issue'd ja PR-ide ajalugu: https://github.com/vikk-tak25/karin-agiilne-tracker
